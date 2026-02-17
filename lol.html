@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наша дружба | Никита и Диана</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2a004f, #6a00ff);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    margin: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+button {
+    background: #a855f7;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #9333ea;
+    transform: scale(1.05);
+}
+
+#secret {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffd6ff;
+}
+
+footer {
+    margin-top: 30px;
+    opacity: 0.7;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1></h1>
+<p>Мини-сайт нашей дружбы</p>
+
+<div class="card">
+<h2>Наша история</h2>
+<p>
+Это сайт посвящён нашей дружбе.  
+Спасибо тебе, Диана, что ты есть 
+</p>
+</div>
+
+<div class="card">
+<h2>Факты о нас</h2>
+<p> Мы много общаемся</p>
+<p> У нас есть свои шутки</p>
+<p> Мы пережили много моментов</p>
+<p> Наша дружба особенная</p>
+</div>
+
+<div class="card">
+<h2>Секретная кнопка</h2>
+<button onclick="showSecret()">Нажми сюда</button>
+<div id="secret"></div>
+</div>
+
+<div class="card">
+<h2>Музычко^^</h2>
+<button onclick="toggleMusic()">Включить / выключить музыку</button>
+</div>
+
+<footer>
+Сделано ^^
+</footer>
+
+</div>
+
+<audio id="music" loop>
+<source src="https://files.catbox.moe/xj8z6s.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+let messages = [
+"Диана, ты очень важный человек 💜",
+"Спасибо за нашу дружбу ✨",
+"Я ценю тебя ",
+"Ты лучшая "
+];
+
+function showSecret() {
+    let random = Math.floor(Math.random() * messages.length);
+    document.getElementById("secret").innerText = messages[random];
+}
+
+let music = document.getElementById("music");
+let playing = false;
+
+function toggleMusic() {
+    if (playing) {
+        music.pause();
+        playing = false;
+    } else {
+        music.play();
+        playing = true;
+    }
+}
+
+</script>
+
+</body>
+</html>
